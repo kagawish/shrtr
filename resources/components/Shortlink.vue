@@ -13,7 +13,7 @@
 		],
 		computed: {
 			shortLink: function() {
-				return `http://localhost/${this.short}`;
+				return `${window.location.href}${this.short}`;
 			}
 		}
 	}

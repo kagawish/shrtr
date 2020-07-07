@@ -42,7 +42,7 @@
 				axios.post('/api/shortlink', {
 					'url': this.link
 				}).then((response) => {
-					this.short = `http://localhost/${response.data.short}`;
+					this.short = `${window.location.href}${response.data.short}`;
 					this.link = '';
 					this.getAllLinks();
 				}).catch((error) => {
