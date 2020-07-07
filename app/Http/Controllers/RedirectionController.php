@@ -12,7 +12,7 @@ class RedirectionController extends Controller {
 		$shortlink = Shortlink::where('short', $short)->first();
 		$url = $shortlink->url;
 
-		if (!strpos($url, 'http')) {
+		if (strpos($url, 'http') === false) {
 			$url = 'http://' . $url;
 		}
 
