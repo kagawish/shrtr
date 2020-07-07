@@ -10,8 +10,13 @@ class RedirectionController extends Controller {
 
 	public function redirect($short, Request $request) {
 		$shortlink = Shortlink::where('short', $short)->first();
+		$url = $shortlink->url;
 
-		$redirection = redirect()->away($shortlink->url);
+		if (!strpos($url, 'http')) {
+			$url = 'http://' . $url;
+		}
+
+		$redirection = redirect()->away($url);
 		$redirection->setStatusCode(Response::HTTP_FOUND);
 
 		return $redirection;
