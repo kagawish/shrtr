@@ -1,7 +1,10 @@
 <template>
-	<div>
-		{{ link }} : <a :href="shortLink">{{ shortLink }}</a>
-	</div>
+	<tr>
+		<td>{{ link }}</td>
+		<td>
+			<a :href="shortLink" target="_blank">{{ shortLink }}</a>
+		</td>
+	</tr>
 </template>
 <script>
 	export default {
@@ -18,5 +21,13 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
+	a {
+		text-decoration: none;
+	}
+	td {
+		padding: 5px 10px;
+		padding-left: 0;
+		font-family: 'Lato', sans-serif;
+	}
 </style>

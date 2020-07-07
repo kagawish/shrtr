@@ -11,11 +11,17 @@
 		<h3>
 			Links
 		</h3>
-		<shortlink 
-			v-for="link in links"
-			:link="link.url"
-			:short="link.short"
-		></shortlink>
+		<table>
+			<tr>
+				<th>Link</th>
+				<th>Shortlink</th>
+			</tr>
+			<shortlink 
+				v-for="link in links"
+				:link="link.url"
+				:short="link.short">
+			</shortlink>
+		</table>
 	</div>
 </template>
 <script>
@@ -56,5 +62,8 @@
 		}
 	}
 </script>
-<style>
+<style scoped>
+	* {
+		font-family: 'Lato', sans-serif;
+	}
 </style>
